@@ -1,0 +1,577 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #0b1d2c;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ---------- Shared text ---------- */
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+.info-text {
+  text-align: center;
+  margin-top: 15px;
+  color: #cfe8ff;
+}
+
+.error-text {
+  text-align: center;
+  margin-top: 15px;
+  color: #ff8a80;
+}
+
+/* ---------- Welcome page ---------- */
+.welcome {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0b1d2c, #2196f3);
+  padding: 20px;
+}
+
+.welcome-box {
+  width: 500px;
+  max-width: 100%;
+  padding: 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+}
+
+.welcome-icon {
+  font-size: 70px;
+}
+
+.welcome-box h1 {
+  font-size: 55px;
+}
+
+.welcome-box h2 {
+  margin: 15px;
+}
+
+.welcome-box p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.features div {
+  background: #17354d;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.features span {
+  display: block;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.start-btn {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  color: #2196f3;
+  font-weight: bold;
+}
+
+/* ---------- App layout (sidebar + content) ---------- */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background-color: #11263c;
+  padding: 20px 14px;
+}
+
+.brand {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: block;
+  padding: 14px 12px;
+  border-radius: 23px;
+  background: #e8e8e8;
+  color: #111;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-btn.active {
+  background: #2196f3;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  min-width: 0;
+}
+
+/* ---------- Home ---------- */
+.hero {
+  min-height: 460px;
+  padding: 24px;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(160deg, #17354d, #1e88e5);
+  transition: background 0.4s;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 320px;
+  max-width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #1e88e5;
+  color: white;
+}
+
+.current p,
+.current h2,
+.current h3 {
+  margin-top: 6px;
+}
+
+.current-temp {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.fav-btn {
+  margin-top: 16px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+}
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.forecast-card {
+  padding: 20px 12px;
+  text-align: center;
+  border-radius: 23px;
+  background: linear-gradient(160deg, #17354d, #1e88e5);
+}
+
+.forecast-card h4 {
+  margin-bottom: 10px;
+}
+
+/* ---------- Dashboard ---------- */
+.main-card {
+  background: white;
+  width: 300px;
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.main-card h2 {
+  font-size: 25px;
+  color: black;
+}
+
+.big-temp {
+  font-size: 36px;
+  color: blue;
+  margin: 10px;
+}
+
+.main-card p {
+  color: #333;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.detail-card {
+  background: white;
+  width: 150px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.detail-card h3 {
+  margin-bottom: 10px;
+  color: gray;
+}
+
+.detail-card p {
+  font-size: 20px;
+  color: blue;
+}
+
+.hourly-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hourly {
+  background: white;
+  width: 150px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hourly h3 {
+  font-size: 16px;
+  color: black;
+}
+
+.hourly p {
+  margin-top: 10px;
+  color: blue;
+  font-size: 18px;
+}
+
+/* ---------- Air quality ---------- */
+.air {
+  text-align: center;
+}
+
+.air p {
+  margin-top: 6px;
+}
+
+.air-status {
+  margin-bottom: 10px;
+}
+
+.chart-box {
+  width: 400px;
+  max-width: 100%;
+  margin: 20px auto 0;
+}
+
+/* ---------- Maps ---------- */
+.map-top {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.map-top input {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.map-top button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #1e88e5;
+  color: white;
+}
+
+.map-top button:hover {
+  background: #1565c0;
+}
+
+.layers {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.layer-btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  background: #17354d;
+  color: white;
+}
+
+.layer-btn:hover,
+.layer-btn.selected {
+  background: #2196f3;
+}
+
+.map-box {
+  width: 100%;
+  height: 560px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #2196f3;
+}
+
+/* ---------- Favorites ---------- */
+.fav-card {
+  background: white;
+  color: #111;
+  width: 300px;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+  text-align: center;
+}
+
+.fav-card p {
+  margin-top: 6px;
+}
+
+.fav-card button {
+  margin-top: 12px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 800px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .forecast {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= Enhancements ================= */
+
+/* Home background changes with the weather */
+.hero.theme-clear { background: linear-gradient(160deg, #1976d2, #fbc02d); }
+.hero.theme-clouds { background: linear-gradient(160deg, #37474f, #78909c); }
+.hero.theme-rain { background: linear-gradient(160deg, #0d1b2a, #415a77); }
+.hero.theme-storm { background: linear-gradient(160deg, #1b1b2f, #5c4d7d); }
+.hero.theme-snow { background: linear-gradient(160deg, #546e7a, #cfd8dc); }
+.hero.theme-mist { background: linear-gradient(160deg, #455a64, #b0bec5); }
+
+.condition {
+  text-transform: capitalize;
+}
+
+.search-bar button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Recent searches */
+.recent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.chip {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.chip:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.clear-chip {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+/* Small info cards */
+.mini-card {
+  background: #17354d;
+  min-width: 140px;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.mini-card span {
+  display: block;
+  font-size: 13px;
+  color: #9fc3e0;
+  margin-bottom: 6px;
+}
+
+.mini-card strong {
+  font-size: 18px;
+}
+
+.home-details {
+  margin-top: 20px;
+}
+
+/* Forecast cards */
+.forecast-icon {
+  font-size: 34px;
+  margin: 6px 0;
+}
+
+.forecast-card .range {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* Unit toggle in sidebar */
+.unit-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px;
+  border: 1px solid #2196f3;
+  border-radius: 23px;
+  background: transparent;
+  color: white;
+}
+
+.unit-btn:hover {
+  background: #2196f3;
+}
+
+/* Loading spinner */
+.spinner-box {
+  text-align: center;
+  padding: 30px;
+  color: #cfe8ff;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 12px;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #2196f3;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dashboard chart */
+.chart-wide {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 12px;
+  background: #11263c;
+}
+
+/* Air quality */
+.aqi-badge {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #111;
+}
+
+.advice {
+  margin: 14px 0 20px;
+  color: #cfe8ff;
+}
+
+/* Favorites buttons */
+.fav-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.fav-actions button {
+  margin-top: 0;
+}
+
+.fav-card button.danger {
+  background: #ffcdd2;
+}

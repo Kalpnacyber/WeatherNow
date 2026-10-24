@@ -1,0 +1,17 @@
+{
+  "name": "weathernow-backend",
+  "version": "2.0.0",
+  "description": "WeatherNow backend - Express API (weather proxy + favorites)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1"
+  }
+}
